@@ -1,0 +1,10 @@
+#!/bin/sh
+
+case "$1" in
+"")
+    svn diff | lsdiff --number
+    ;;
+*)
+    svn diff | filterdiff $*
+    ;;
+esac
