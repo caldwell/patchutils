@@ -1,0 +1,10 @@
+#!/bin/sh
+
+case "$1" in
+"")
+    svndiff -F1- | vim -R -
+    ;;
+*)
+    svndiff $* | vim -R -
+    ;;
+esac

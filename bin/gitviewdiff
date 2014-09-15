@@ -1,0 +1,10 @@
+#!/bin/sh
+
+case "$1" in
+"")
+    gitdiff -F1- | vim -R -
+    ;;
+*)
+    gitdiff $* | vim -R -
+    ;;
+esac

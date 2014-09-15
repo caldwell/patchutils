@@ -1,0 +1,11 @@
+#!/bin/sh
+
+#echo "git diff | lsdiff $*"
+case "$1" in
+"")
+    git diff | lsdiff --number
+    ;;
+*)
+    git diff | filterdiff $*
+    ;;
+esac
